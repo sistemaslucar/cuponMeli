@@ -2,6 +2,7 @@ package com.cupon.meli.controller;
 import com.cupon.meli.dto.CouponRequest;
 import com.cupon.meli.dto.CouponResponse;
 import com.cupon.meli.service.CouponCalculatorService;
+import com.cupon.meli.service.CouponCalculatorServiceImpl;
 import com.cupon.meli.service.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,8 +13,10 @@ import java.util.*;
 @RestController
 public class CouponController {
 
+
     @Autowired
-    CouponCalculatorService couponCalculatorService;
+    private CouponCalculatorService couponCalculatorService;
+
 
 
     @Autowired
@@ -21,11 +24,11 @@ public class CouponController {
 
     @PostMapping("/couponMeli/coupon")
     public CouponResponse calculate(@RequestBody CouponRequest request) {
-        // Map the list of item IDs to their prices (this should ideally come from an external service)
+
         Map<String, Float> itemPrices = new HashMap<>();
 
         for (String itemId : request.getItemIds()) {
-            itemPrices.put(itemId, priceService.getPrice(itemId));
+            itemPrices.put(itemId, priceService.getItemPrice(itemId));
         }
 
         // Calculate the selected items using the algorithm

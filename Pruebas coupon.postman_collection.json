@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "8af82844-2a3f-4636-9353-fc6fb4cdb004",
+		"name": "Pruebas coupon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10335651"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"item_ids\": [\"MLA1\", \"MLA2\", \"MLA3\", \"MLA4\", \"MLA5\"],\r\n\"amount\": 500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/couponMeli/coupon/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"couponMeli",
+						"coupon",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

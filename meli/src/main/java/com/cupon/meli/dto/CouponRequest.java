@@ -2,12 +2,16 @@ package com.cupon.meli.dto;
 
 import java.util.List;
 
+import lombok.*;
+
+@Getter
+@Setter
 public class CouponRequest {
+
     private List<String> itemIds;
+
+
     private Float amount;
-
-    // Getters and Setters
-
 
     public List<String> getItemIds() {
         return itemIds;
